@@ -164,3 +164,77 @@
 #### Inference - Making predictions using the trained model
 
 ## Remember: Training = Learning, Evaluation = Testing performance, Inference = Making predictions.
+
+
+## Linear Regression
+
+#### Linear Regression is a supervised machine learning algorithm and is a statistical technique used to find the relationship between variables. Input variables (features) and an output variable (target).
+
+#### In simple words: Linear Regression finds the best-fit straight line through data points to predict future values.
+
+## What is the Best-Fit Line?
+#### The best-fit line is the line that minimizes the sum of squared differences between actual values and predicted values.
+
+#### These differences are called residuals. Residual = Actual Value - Predicted Value
+
+### 1. Real-world example
+#### Suppose we want to predict a student's marks based on the number of hours they study.
+#### Study hours (X)	Marks (Y)
+#### 1	20
+#### 2	30
+#### 3	40
+#### 4	50
+#### 5	60
+
+#### Here:
+#### - Independent variable (X): Study hours.
+#### - Dependent variable (Y): Marks.
+#### - Goal: Predict marks based on study hours.
+
+### Linear regression equation
+#### In algebraic terms, the model would be defined as y = mx + b, where
+
+ #### y is the value we want to predict.
+ #### m is the slope of the line.
+ #### x is input value.
+ #### b is the y-intercept.
+
+#### For example: y = 10 + 10x
+
+#### If a student studies for 6 hours: y = 10 + 10(6) = 70
+
+
+#### Types of Linear Regression
+#### Type	Description
+#### Simple Linear Regression	Uses one independent variable
+#### Multiple Linear Regression	Uses two or more independent variables
+
+#### Simple Linear Regression:y = mx + b
+
+#### Example: Predicting salary using years of experience.
+
+#### Multiple Linear Regression: y = m1x1 + m2x2 + m3x3 + m4x4 + m5x6 + b
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# Training data
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([20, 30, 40, 50, 60])
+
+# Create model
+model = LinearRegression()
+
+# Train model
+model.fit(X, y)
+
+# Predict marks for 6 study hours
+prediction = model.predict([[6]])
+
+print("Predicted Marks:", prediction[0])
+print("Slope:", model.coef_[0])
+print("Intercept:", model.intercept_)
+
+
+
+## LOSS
